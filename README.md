@@ -1,7 +1,7 @@
-Nodemon
-Express
-Faker
-Body-parser
+- Nodemon
+- Express
+- Faker
+- Body-parser
 
 # Créer une api rest avec Express js 
 
