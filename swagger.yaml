@@ -1,0 +1,51 @@
+swagger: "2.0"
+info:
+  description: "API Books"
+  version: "1.0.0"
+  title: "API Books"
+host: "10.13.3.214"
+basePath: "/api/v1"
+tags:
+- name: "books"
+  description: "Tous les livres"
+schemes:
+- "http"
+paths:
+  /books:
+    get:
+      tags:
+      - "books"
+      summary: "Liste des livres"
+      description: "Liste de tous les livres"
+      operationId: "getBooks"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Liste de tous les livres"
+        required: true
+        schema:
+          $ref: "#/definitions/Book"
+      responses:
+        "405":
+          description: "Invalid input"
+definitions:
+  Book:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      title:
+        type: "string"
+      author:
+        type: "string"
+      description:
+        type: "string"
+    xml:
+      name: "Books"
